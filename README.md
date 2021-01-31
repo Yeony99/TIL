@@ -2,7 +2,7 @@
 ##### written by Yeony99
 
 > 배움은 삶의 해상도를 높이는 것
-##### Learning is increase resolution of my life
+> Learning is increase resolution of my life
 
 ## 규칙
 - 확실히 이해한 내용을 기록한다.
