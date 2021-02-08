@@ -45,7 +45,7 @@ public class B extends A {
   public void print(int a) {
   }
 }
-
+```
   ##### @Override 어노테이션을 사용하지 않은 경우에는 **중복 정의(overloading)가 될 수 있다.
   ##### 그러나 @Override가 사용된 경우엔, 오버라이딩 메소드라고 알려주었기 때문에 컴파일 오류 발생
   
