@@ -1,7 +1,8 @@
 # Today I Learned
 ##### written by Yeony99
+##### January 31, 2021 ~ 
 
-> 배움은 삶의 해상도를 높이는 것
+> 배움은 삶의 해상도를 높이는 것   
 > Learning is increase resolution of my life
 
 ## 규칙
