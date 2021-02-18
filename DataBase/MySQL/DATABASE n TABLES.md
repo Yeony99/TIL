@@ -11,5 +11,5 @@ MySQL을 처음 배우는 용도로 사용하기로 결정했다.
 1. 콘솔> bitnami에서 bin> 으로 위치 이동 후 mysql -uroot - p 설정해둔 root 사용자의 password를 입력 후 mysql에 접속. 
 2. CREATE DATABASE [데이터베이스명];   
 3. use [데이터베이스명];  --> Database changed 가 나오면 ok
-4. CREATE TABLE [테이블명](요소);
+4. CREATE TABLE [테이블명][요소];
 5. 성공적으로 Database changed 를 봤다면, SHOW TABLES로 만들어진 테이블 확인 가능.
