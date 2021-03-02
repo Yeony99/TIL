@@ -45,3 +45,25 @@ SELECT ASCII('ABC') FROM dual;
 ```
 SELECT ASCIISTR('abc 123 서울') FROM dual;  -- 서울은 c11c c6b8 로 출력
 ```
+
+### LENGTH
+* 문자의 길이 반환
+* LENGHTB는 문자 대신 바이트 길이로 반환
+
+### INSTR
+* LIKE와 유사한 기능. 
+* 문자열에서 일치하는 값을 찾는다
+```
+SELECT INSTR ('korea seoul', 'e') FROM dual; -- 4 (인덱스는 1부터 시작)
+SELECT INSTR ('korea seoul', 'abc') FROM dual -- 0 (없는경우 0 반환)
+SELECT INSTR ('korea seoul', 'e', 7) FROM dual -- 8 (7번째 인덱스부터 검색)
+SELECT INSTR ('korea seoul', 'e', 1, 2) FROM dual -- 8 (1인덱스부터 검색해서 2번째 나오는 문자 'e'의 위치 반환)
+```
+
+### LPAD / RPAD 
+* LPAD(a, n, b) 일 때 남은 왼쪽 여백을 b로 채워 길이가 n인 a를 반환한다. 
+  - b 지정하지 않을 시 단일 공백.
+```
+SELECT LPAD('서울', 6, '*') FROM dual; -- 한글은 2자로 처리
+SELECT RPAD('korea', 12, '*') FROM dual; -- 좌측 정렬 후 * 붙임
+```
