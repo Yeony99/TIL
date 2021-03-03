@@ -67,3 +67,31 @@ SELECT INSTR ('korea seoul', 'e', 1, 2) FROM dual -- 8 (1인덱스부터 검색�
 SELECT LPAD('서울', 6, '*') FROM dual; -- 한글은 2자로 처리
 SELECT RPAD('korea', 12, '*') FROM dual; -- 좌측 정렬 후 * 붙임
 ```
+
+### LTRIM / RTRIM / TRIM
+* 공백을 제거한다
+```
+SELECT ':' || '     대한  민국      ' || ':' FROM dual;
+SELECT ':' || LTRIM('     대한  민국      ') || ':' FROM dual; -- 왼쪽 공백 제거
+SELECT ':' || RTRIM('     대한  민국      ') || ':' FROM dual; -- 오른쪽 공백 제거
+SELECT ':' || TRIM('     대한  민국      ') || ':' FROM dual; -- 왼쪽, 오른쪽 공백 제거
+
+SELECT LTRIM('AABBBCDABCD', 'BA') FROM dual; -- 왼족에서 B또는 A가 하나라도 존재하면 제거
+SELECT RTRIM('우리나라대한', '대한') FROM dual; -- 우측 '대한' 제거
+SELECT TRIM('A' FROm 'AABBCCAA') FROm dual; -- 양쪽 'A'제거. 단, 삭제할 문자는 >한글자<만 가능
+```
+
+### TRANSLATE
+* TRANSLATE(string, a, b) 일 때, string에 있는 a를 b로 치환한다.
+```
+SELECT TRANSLATE('2kbh34tu78', '0123456789', '9999999999') FROM dual; -- 숫자는 9
+
+SELECT TRANSLATE('2kbh34tu78', '0123456789abcdefghijklmnopqrstuvwxyz', '9999999999xxxxxxxxxxxxxxxxxxxxxxxxxx') 
+FROM dual; -- 숫자는 9로, 알파벳은 x로
+
+SELECT TRANSLATE('2kbh34tu78', '0123456789abcdefghijklmnopqrstuvwxyz', '0123456789')
+FROM dual; -- 23478, 영문자 사라짐
+```
+
+### TO_CHAR
+* 문자가 아닌 자료(날짜, 숫자 등)을 char로 바꾼다.
