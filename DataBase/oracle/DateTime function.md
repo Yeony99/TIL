@@ -85,3 +85,42 @@ FROM dual;
 SELECT TO_CHAR(TO_DATE('2021-03-05', 'YYYY-MM-DD'), 'iw')
 FROM dual; --9, 2020-03-05면 10
 ```
+
+### 날짜 절삭 TRUNC
+```
+SELECT TRUNC(SYSDATE) "오늘",
+    TO_CHAR(SYSDATE, 'D') "요일 수치로"
+FROM dual;
+-- 오늘 날짜와 1~7(일~토)에 해당하는 날짜 출력
+
+SELECT TRUNC(TO_DATE('2021-07-14', 'YYYY-MM-DD'), 'YEAR') FROM dual; -- 21/01/01 로 출력
+SELECT TRUNC(SYSDATE- TRUNC(SYSDATE, 'YEAR')) "올해가 지난지" FROM dual; -- 1월 1일부터 며칠이나 지났는지
+```
+
+
+### 날짜 반올림 ROUND
+* 연도는 7월 1일부터 반올림
+```
+SELECT ROUND(TO_DATE('2021-07-14', 'YYYY-MM-DD'), 'YEAR') FROM dual; -- 22/01/01 로 출력
+SELECT ROUND(TO_DATE('2021-07-14', 'YYYY-MM-DD'), 'MONTH') FROM dual; -- 21/07/01 로 출력. (월 기준으로 반올림) 16일부터 반올림.
+SELECT ROUND(TO_DATE('2021-07-16', 'YYYY-MM-DD'), 'MONTH') FROM dual; -- 21/08/01 출력
+```
+
+### 즐거운 주말 구하기 :)
+* When is your Happy Weekend
+```
+SELECT SYSDATE,
+NEXT_DAY(SYSDATE, 1)-7 이번주일욜, -- 다가오는 일요일에서 -7
+    CASE
+        WHEN TO_CHAR(SYSDATE, 'D') = 7 THEN SYSDATE
+        ELSE NEXT_DAY(SYSDATE, 7)
+    END 이번주토욜
+FROM dual;
+
+-- 혹은
+SELECT SYSDATE,
+NEXT_DAY(SYSDATE, 1)-7 이번주일욜, -- 다가오는 일요일에서 -7
+NEXT_DAY(SYSDATE-1, 7) 이번주토욜
+FROM dual;
+```
+
