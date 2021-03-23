@@ -1,4 +1,4 @@
-#JavaScript
+# JavaScript 알아보기
 
 ## JavaScript의 특징
 * 연산이 된다
