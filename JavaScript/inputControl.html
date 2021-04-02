@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="inputControl.js"></script>
+</head>
+<body>
+    <p>
+        Only Numbers : <input type="text" id="num" onkeypress="onlyNum(this)"; onkeyup="noKorean(this);">
+    </p>
+
+    <p>
+        Only Alphabet : <input type="text" id="alp" onkeypress="onlyAlp(this);" onkeyup="noKorean(this);">
+    </p>
+    <p>
+        Only Korean : <input type="text" id="kor" onkeypress="onlyKorean(this)">
+    </p>
+</body>
+</html>
