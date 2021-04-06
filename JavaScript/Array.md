@@ -69,3 +69,96 @@ console.log(yeonyInfo);
 
 */
 ```
+
+## Array Method
+1) push & pop
+- push()는 **배열의 끝**에 요소를 추가하고 **늘어난 배열의 길이 반환**한다.
+- pop()은 **배열의 마지막 요소를 제거**하고 **해당 요소를 반환**한다. 
+```
+const colors = ['red', 'yellow', 'green'];
+
+const more = colors.push('blue');
+console.log(more); // 4
+console.log(colors); // ['red', 'yellow', 'green', 'blue']
+
+console.log(colors.pop()); // 'blue'
+console.log(colors); //['red', 'yellow', 'green']
+```
+
+2) shift & unshift
+- shift()는 **배열의 첫 번째 요소 제거**하고, **해당 요소를 반환**한다.
+- unshift()는 **배열의 가장 처음**에 요소를 추가하고 **늘어난 배열의 길이 반환**한다.
+```
+const fruits = ['apple', 'orange', 'melon'];
+console.log(fruits.unshift('watermelon', 'grapes')); //5
+console.log(fruits); //["watermelon", "grapes", "apple", "orange", "melon"]
+
+console.log(fruits.shift()); //watermelon
+console.log(fruits); //["grapes", "apple", "orange", "melon"]
+```
+
+3) concat 
+- 여러 배열을 합병한다.
+```
+const arr1 = ['가','나','다'];
+const arr2 = ['라','마','바'];
+
+arr1.concat(arr2); // ["가", "나", "다", "라", "마", "바"]
+
+```
+
+4) includes
+- 요소를 포함하고 있는지 확인하여 boolean 형으로 반환한다.
+```
+const kor =  arr1.concat(arr2) //["가", "나", "다", "라", "마", "바"]
+kor.includes('아'); //false
+kor.includes('가'); //true
+```
+
+5) indexOf
+- 요소를 포함하고 있는지 확인하여 배열의 index로 반환한다.
+- 요소가 없으면 -1 반환한다.
+```
+"red".indexOf('r'); // 0
+"red".indexOf('R'); // -1
+```
+
+6) reverse
+- 배열의 순서를 뒤집는다.
+```
+kor.reverse();
+// ["바", "마", "라", "다", "나", "가"]
+```
+
+7) slice
+- 배열의 n번째요소부터 m-1번째 요소를 새로운 배열로 반환한다.
+- 원본 배열에는 아무런 영향을 주지 않는다.
+```
+const animal = ['cat', 'dog', 'chicken', 'monkey'];
+const favoriteAnimals = animal.slice(3);
+console.log(favoriteAnimals) // monkey
+animal.slice(1,3); //["dog", "chicken"]
+```
+
+8) splice
+- 배열의 기존 요소를 삭제/교체/추가하여 배열의 내용을 변경한다.
+- 교체는 엄밀히 말해 삭제 후 해당 자리에 요소를 추가하는 것이다.
+```
+const colors = ['red', 'orange','yellow', 'green', 'blue', 'indigo','violet'];
+
+//삭제
+colors.splice(5,1); // indigo
+console.log(colors); //["red", "orange", "yellow", "green", "blue", "violet"]
+
+//추가
+colors.splice(2,0,'lemon');
+console.log(colors); // ["red", "orange", "lemon", "yellow", "green", "blue", "violet"]
+
+//여러 요소 한번에 추가
+colors.splice(3,0,'bright-green','light-green');
+console.log(colors); // ["red", "orange", "lemon", "bright-green", "light-green", "yellow", "green", "blue", "violet"]
+
+// 교체
+colors.splice(4,2,'deleted'); // ["light-green", "yellow"] 두개 요소를
+console.log(colors); //["red", "orange", "lemon", "bright-green", "deleted", "green", "blue", "violet"] deleted로 교체
+```
