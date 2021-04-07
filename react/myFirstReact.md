@@ -30,3 +30,4 @@ npm start
 
 localhost:3000 주소로 **Welcome to React** 사이트가 열린 것을 볼 수 있다.
 
+yarn을 설치하지 않았는데, yarn을 설치했다면 npm start 대신 yarn start가 나온다.
