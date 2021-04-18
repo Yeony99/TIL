@@ -1,8 +1,9 @@
 # 리액트 컴포넌트 작성 - 함수
 
 ## 과정
-* start npm (혹은 start yarn)
-    - localhost:3030 이 실행되어야 한다.
+* npm start (혹은 yarn)
+    - localhost:3000 이 실행되어야 한다.
+    - 처음 할 때 폴더는 hello-react이기 때문에 꼭 `cd hello-react` `npm start` 해줘야 한다.
 * Hello.js에서 function 작성
     - Hello라는 컴포넌트를 만든다.
 ```
