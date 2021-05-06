@@ -26,10 +26,65 @@ Gatsby는 static site generReact-based이며, GraphQL 기반이다. 공부하려
     - `gatsby develop` 후 success Building development bundle 메시지 확인 가능.
     - http://localhost:8000 접속해 Gatsby Default Starter 페이지 확인
 
-
-## pages 
+## 폴더 살펴보기
+### pages 
 블로그 폴더 안에는 주 작업장소인 src 폴더가 있다.   
 그 안 `pages` 폴더 속 index.js 파일이 localhost 창을 띄웠을 때 나타나는 페이지이다.   
 해당 폴더 속 `.js`파일들은 자동으로 페이지가 된다.
 개츠비는 기본적으로 JSX를 사용하기 위해 React를 import하고 있다.   
+
+### components
+리액트 기반이기 때문에 컴포넌트를 재사용할 수 있다.    
+index.js에는 `import Layout from "../components/layout"`처럼 컴포넌트의 layout이 import되어있다.    
+header.js 와 같은 경우에는 header 부분을 작성해 컴포넌트를 다른 웹페이지에서 불러와 사용할 수 있게끔 한다.   
+React를 사용하니 jsx가 좀더 맞는 말일 듯 하다.   
+
+### Link
+페이지 이동이다. 개츠비 개발환경을 구축하면 자동으로 들어가는 index.js에도 이미 Link가 있다.   
+```
+<Link to="/page-2/">Go to page 2</Link> <br />
+```
+pages폴더 안 page-2.js로 연결된다.   
+
+## deploy
+React 공식에서도 사용하는 Netlify랑 고민을 했는데, Gatsby 튜토리얼 등에서 설명하는 Surge가 굉장히 간편해보였다. Surge로 선택.   
+
+1. Surge 설치
+```
+> npm install --global surge
+```
+
+2. Surge 로그인(가입)
+```
+> surge login
+> (이메일)
+> (비밀번호)
+```
+자동으로 가입된다.
+
+3. gatsby를 적용한 최상위 폴더에서 빌드
+```
+> gatsby build
+```
+
+4. public 혹더 확인
+```
+> ls public
+```
+
+5. publishing 
+```
+> surge public/
+```
+
+6. 주의아닌 주의
+Running as (본인 이메일) 이 뜬다. 그리고 각자 부여받은 domain도 확인 가능하다.   
+여기서 순간 끝난 줄 알고 도메인으로 이동을 했는데 project not found가 떴다.   
+절대 이슈라든가 그런 게 아니라, 아직 publishing과정이 덜 끝난 것이다. enter 누르면 성공적으로 끝난다. 찾아봤다가 비슷한 사람들이 꽤 많은 걸 알게 됐다..
+
+7. domain 접속 확인
+받은 도메인에 연결이 잘 되는 것을 확인할 수 있다. pc가 아니여도 된다.   
+
+
+
 
