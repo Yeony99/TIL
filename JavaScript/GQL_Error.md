@@ -63,3 +63,11 @@ module.exports = {
 npm install bcrypt --build-from-source
 ```
 
+<hr>
+해결 : bcryptjs 사용 (not bcrypt)   
+bcrypt는 해시 암호 생성 과정이 bcryptjs 3.1배 빠르고, 기능 비교에서 1.3배 빠르다.   
+하지만 적용 자체가 되지 않아 bcryptjs로 사용하기로 결정.   
+사용 방법 자체는 같다.
+```
+npm install --save bcryptjs
+```
