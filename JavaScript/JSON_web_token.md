@@ -30,3 +30,12 @@ const validateJWT = await token => {
     return await jwt.verify(token, process.env.JWT_SECRET);
 }
 ```
+
+* localStorage
+    - 토큰을  사용자의 기기에 사용자를 식별 가능한 ID를 안전하게 저장할 수 있다.
+    - localStorage는 저장소가 업데이트되거나 삭제될 때까지 브라우저 세션 간에 유지되는 `키-값` 저장소
+    - 단, 토큰이 localStorage에 저장되면 페이지에서 실행 가능한 모든 JS가 토큰에 접근 가능해 XSS 보안에 취약해진다.
+        - 따라서 CDN 스크립트 등을 제한하는 등의 주의가 필요하다.
+ 
+## 참고
+[Authentication with GraphQL](https://www.howtographql.com/react-apollo/5-authentication/)
