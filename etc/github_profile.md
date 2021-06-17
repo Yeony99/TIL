@@ -23,11 +23,20 @@ Hexcode는 `#000000`이 아닌, `000000`으로 기입한다.
     - [capsule-render](https://github.com/kyechan99/capsule-render)
 
 ### "." 이 들어간 스택의 경우
-`Node.js` 같은 경우, 어떻게 해야 할지 조금 헤맸다.   
-Node.js나 Vue.js처럼 dot가 들어간 경우는 아래와 같이 하면 된다.    
+~~`Node.js` 같은 경우, 어떻게 해야 할지 조금 헤맸다.   
+Node.js나 Vue.js처럼 dot가 들어간 경우는 아래와 같이 하면 된다.~~  
 ```
 [![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node-dot-js&logoColor=white)]()
 ```
+* 2021/06/17 수정
+`logo=Node.js`로 주어야 알맞게 출력된다.
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=Node.js&logoColor=white)]()
+```
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=Node.js&logoColor=white)]()
+```
+
+불과 8일전(수정일 2021.06.17)에 올라온 issue에서도 `node-dot-js`로 표시하고 있었다. 갑자기 바꼈다니 영문을 모를 일...   
+[simple-icons에 올라온 issue](https://github.com/simple-icons/simple-icons/issues/5889)
 
 ## 참고
 
