@@ -43,7 +43,7 @@ CORS의 preflight를 trigger하지 않고 단순 요청하는 것. 이하는 조
 * 리다이렉트
     - 모든 브라우저가 preflight 후 리다이렉트를 지원하지는 않음.
     - 
-3. Credentialed 요청 (인증정보를 포함한 요청)
+3. Credentialed 요청 (인증정보를 포함한 요청)    
 Credential requests는 HTTP Cookies와 HTTP Authentication 정보를 인식한다.   
 `CORS` 기본 방법이라기보다는, 다른 origin 간에서 통신을 보완하고자 할 때 사용.   
 기본적으로 Cross-site에 대한 XMLHttpRequest 혹은 FetchAPI 요청에서 브라우저는 인증에 대한 정보를 보내지 않기 때문에, 특정한 정보를 담을 수 있도록 옵션을 설정해주어야 한다. 그것이 바로 `Credentials`옵션.   
