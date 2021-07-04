@@ -244,6 +244,10 @@ v-bind가 동적으로 반영된다면, v-model은 정적인 문자열을 넣을
 </tr>
 ```
 
+### on & emit
+`$on`은 이벤트를 감지한다. 단, 자식에서 호출한 이벤트는 감지하지 않는다.   
+`$emit`은 다른 컴포넌트에게 이벤트를 전달하기 위해 사용된다.   
+
 
 ## Reference
 [Vue 공식문서](https://kr.vuejs.org/index.html)   
