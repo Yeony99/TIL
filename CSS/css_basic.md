@@ -11,4 +11,9 @@
   * width가 1200px인 경우, 100vw = 1200px
 * vmin/vmax : `viewport`를 기준으로 width, height 값에 따라 최소/최대값을 지정할 수 있다.
   * `height: 100vmin` 형식으로 작성.
-* ex/ch : 
+* ex : 현재 폰트의 `'x' 높이값`(소문자 x) 혹은 `em`의 절반 값.
+  * 폰트의 중간 지점을 알아내기 위해 자주 사용.
+  * 참고 👉🏻 [The Anatomy of Web Typography](https://webdesign.tutsplus.com/articles/the-anatomy-of-web-typography--webdesign-10533)
+* px : 픽셀. 모니터 해상도를 나타낼 때 쓰인다.
+
+##
