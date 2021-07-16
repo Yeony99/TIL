@@ -16,6 +16,24 @@ CREATE TABLE [TABLENAME] (
 )
 ```
 
+* 뷰 생성
+View 테이블은 SELETE 질의로 도출된 결과를 저장할 수 있는 테이블이다.    
+새로운 데이터가 생성되는 것은 아니며, 기존의 결과를 그대로 불러와 참조할 수 있다.   
+
+```
+CREATE VIEW [VIEW_NAME] AS
+SELECT C1, C2, C3, ...
+FROM [TABLE_NAME]
+```
+
+* 인덱스 테이블 생성
+~~ UNIQUE 조건을 갖고 있는 컬럼에 대해 자동적으로 생성된다. ~~
+~~ 하지만 언제 쓰는지 정확히 모르겠다~~
+
+```
+CREATE INDEX [INDEX_TABLE_NAME] ON [TABLE_NAME] (Column1, C2, C3, ...)
+```
+
 ### 컬럼 조건
 * NOT NULL : NULL 비허용
 * PRIMARY KEY : 기본키.　(NULL 비허용, 유일한 값)
