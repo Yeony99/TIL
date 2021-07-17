@@ -97,3 +97,21 @@ ALTER TABLE [TABLENAME] ADD CONSTRAINT [CONSTRAINT_NAME] CHECK (condition)
 -- check 조건 삭제
 ALTER TABLE [TABLENAME] DROP CONSTRAINT [CONSTRAINT_NAME]
 ```
+
+## 자료형
+* char(n) : 길이 고정 문자열
+* varchar : 길이 가변 문자열
+* int2
+* int
+* int8
+* float4
+* float8
+* boolean 
+  * TRUE, 't', 'true', 'y', 'yes', 'on', '1' 은 TRUE 값을 가진다
+  * FALSE, 'f', 'n', 'no', 'off', '0' 은  FALSE 값을 가진다
+  * 참조 [Boolean Type](https://www.postgresql.org/docs/9.1/datatype-boolean.html)
+* date : 년월일
+* time : 시분초
+* timez : 시분초 + 타임존
+* timestamp : 년월일시분초
+* timestampz : 년월일시분초 + 타임존
