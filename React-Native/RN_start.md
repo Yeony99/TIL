@@ -23,3 +23,18 @@
 - 사용자에 대한 사용자 변수 > 새로 만들기 > 변수이름 : ANDROID_HOME, 변수 값 : SDK 설정 화면의 Android SDK Location 입력 
 - 사용자에 대한 사용자 변수 > Path > 편집 > 새로만들기 > `C:\Users\사용자 이름\Android SDK Location주소\platform-tools` 입력 후 확인
 - `cmd> adb` 입력해 환경변수 설정되었는지 확인
+
+## Android Studio Emulator 설치
+에뮬레이터는 어플을 컴퓨터 환경에서 가상으로 실행해볼 수 있게 돕는 장치이다.
+1. AVD(Android Virtual Device) 설정
+    - Tools > AVD Manager > Create Virtual Device
+    - Select Hardware 에서 테스트할 device 선택
+    - Select a system image 에서 시스템 이미지 선택
+    - AVD name 설정 후 앱의 가로, 세로 여부 설정 > Finish
+    - 참고 [Android Developers](https://developer.android.com/studio/run/managing-avds?hl=ko)
+2. 툴바의 기기 드롭다운 메뉴에서 AVD 선택
+3. Run
+
+## Android Studio 내에서 Emulator 실행
+1. File > Settings > Tools > Emulator > Launch in a tool window > OK
+2. 자동으로 표시 안될 경우 View > Tool Windows > Emulator
