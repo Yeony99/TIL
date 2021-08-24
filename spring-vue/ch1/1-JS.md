@@ -95,5 +95,33 @@ Test.prototype.sayHello = function() {
     }
 
 ```
-  * 생성 함수
-  * ES6의 클래스
+
+
+### 객체, 프로퍼티, 프로퍼티 속성
+* 데이터 프로퍼티 
+  * value : 자바스크립트의 모든 자료형 가능
+  * writable : 데이터 프로퍼티의 변경 가능 여부를 정의
+  * enumerable : for-in 구문을 이용해 열거 가능 여부를 정의
+  * configurable : 제거 가능 여부, 접근 프로퍼티 변경 여부, 쓰기 불가 여부, enumerable 속성의 수정 가능 여부 정의
+
+* 접근 프로퍼티
+  * get 접근자 (get accessor) - Function 객체 혹은 undefined 지정
+  * set 접근자 (set accessor) - Function 객체 혹은 undefined 지정
+  * enumerable : for-in 구문을 이용해 열거 가능 여부 정의
+    * `false`이면 수정 불가능
+  * configurable : 제거 가능 여부, 데이터 프로퍼티의 변경 가능 여부, 다른 속성들의 수정 가능 여부 정의
+
+> 자바스크립트에서 Object.defineProperty 혹은 Object.defineProperties 를 사용해 객체의 프로퍼티 수정
+
+### 프로토타입과 상속
+* 자바스크립트의 프로토타입
+  * 다른 객체에 공유 프로퍼티(shared properties)를 제공하는 객체.
+  * **함수객체만** 프로토타입을 가진다. (특별히 설정하지 않아도 모든 함수는 프로토타입을 자동적으로 가짐)
+    * why? 함수 객체만 호출 가능
+    * why? 함수 객체만 다른 객체를 생성할 수 있음.
+    * 단, 화살표 함수는 프로토타입을 가지지 않음.
+
+> 참고 [자바스크립트 함수 properties](https://javascript.info/function-prototype)
+
+> 기본 프로퍼티인 "prototype"은 constructor 프로퍼티 하나만 있는 객체를 가리킨다. 이 constructor 프로퍼티는 함수 자신을 가리키는 것.
+> 
