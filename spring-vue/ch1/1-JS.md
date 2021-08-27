@@ -124,4 +124,33 @@ Test.prototype.sayHello = function() {
 > 참고 [자바스크립트 함수 properties](https://javascript.info/function-prototype)
 
 > 기본 프로퍼티인 "prototype"은 constructor 프로퍼티 하나만 있는 객체를 가리킨다. 이 constructor 프로퍼티는 함수 자신을 가리키는 것.
-> 
+
+
+### 스코프, 클로저
+#### 스코프(scope)
+> 변수의 접근성에 관한 개념
+
+* 자바의 스코프
+  * 기본적으로 중괄호 `{}`를 이용
+  * 클래스 레벨 스코프
+  * 메소드 레벨 스코프
+  * 블록 레벨 스코프
+
+* 자바스크립트의 스코프
+  * 전역 스코프 (global scope)
+  * 함수 스코프 (function scope)
+  * 블록 스코프(block scope)
+    * const, let 키워드 이용
+
+* 클로저란?
+  * 클로저는 함수와 그 함수가 선언된 렉시컬 환경의 조합
+  * **렉시컬**은 렉시컬 범위 지정이 변수가 사용 가능한 위치를 결정하기 위해 소스 코드 내에서 변수가 선언된 위치를 사용한다는 사실을 나타낸다
+  * 클로저는 외부 함수가 반환된 후에도 외부 함수의 변수 범위 체인에 접근할 수 있는 함수
+  * 그러니까, `함수 속에 중첩된 함수`이다.
+
+* 왜 클로저를 사용하는지?
+  * 함수를 얼마나 깊게 중첩시키는지와는 관계없이 **부모 함수 스코프**에 접근 가능하고, 전역 스코프(=최상위 스코프)까지 접근 가능!
+  * 클로저로 데이터 프라이버시 / private method를 모방. 일반적으로 [모듈 패턴](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript)에 사용된다.
+  * ~~자바의 private 메소드?~~
+
+
