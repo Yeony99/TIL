@@ -218,3 +218,80 @@ test();
 2. 변수 선언을 끌어올린다
 3. 함수가 실행되고
 4. 선언한 변수에 함수 표현식이 대입 = 실행되지 않은 상태
+
+
+## ES6 기본
+
+### 블록 스코프, let, const
+**호이스팅이 적용되지 않는** 선언
+
+* 변수 : let
+* 상수 : const
+
+### 클래스
+~~사실 자바스크립트의 클래스는 잘 모르겠다~~
+* 클래스 구문으로 생성자를 생성한다
+* 상위 클래스로부터 확장하고 정적 메소드 생성이 가능하다
+* getter, setter 생성 가능하다
+
+```
+class User {
+  constructor(name, favorites) {
+    this.name = name;
+    this.favorites = favorites;
+  }
+  introduce() {
+    console.log(this.name +' likes '+ this.favorites.length + 'things')
+  }
+
+  get favoritesCount() {
+    return this.favorites ? this.favorites.length : 0;
+  }
+}
+```
+
+* `_task` 와 같이 언더바 프로퍼티를 정의하면, `private` 프로퍼티로 간주되어 외부에서 직접 변경할 수 없음을 암시
+  * 단, 약속일 뿐 접근가능하다
+```
+class Mate extends User {
+  constructor(name, favorites) {
+    super(name, favorites);
+    this._task = [];
+  }
+
+  introduce() {
+    console.log(this.name +' likes '+ this.favorites)
+  }
+
+  work() {
+    console.log('I have '+this._task.length + ' tasks');
+  }
+}
+
+let result = new Mate('Yeony', ['apple','music','mandarin']);
+result.introduce(); // Yeony likes 3 things
+result.task = ['go home', 'eat dinner'];
+result.work(); // I have 2 tasks
+```
+
+* User 클래스에 메소드 추가 시
+1. 부모 클래스의 프로토타입 객체에 추가(상속 가능)
+```
+User.prototype.eat = function() {
+  console.log('Hungry......')
+};
+
+result.eat();
+```
+
+2. User 객체에 직접 추가 - 상속 불가능
+```
+User.drink = function() {
+  console.log('Thirsty......')
+};
+
+result.drink(); // is not a function
+```
+`drink`는 User 클래스의 `정적 메소드`가 되었기 때문에 상속 불가능 한 것
+
+
