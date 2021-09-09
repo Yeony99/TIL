@@ -295,3 +295,51 @@ result.drink(); // is not a function
 `drink`는 User 클래스의 `정적 메소드`가 되었기 때문에 상속 불가능 한 것
 
 
+### 화살표 함수
+* 반환하는 값는 표현식의 결과
+```
+const fruits =[ {name: 'apple', price: 100}, {name: 'melon', price: 200}, {name: 'banana', price: 300} ];
+
+// 인자가 없을 때
+var count = () => fruits.length //ES6
+var count = function() { //ES5
+  return fruits.length;
+}
+
+// 인자가 하나일 때 - 괄호 생략 가능
+fruits.filter(fruit => fruit.price > 200);
+
+fruits.filter(function(fruit.price) {
+  return fruit.price > 200;
+})
+
+
+// 함수가 객체 리터럴 반환시 - 괄호로 감싸기
+var bag = fruits.map(fruit => ({
+  name: fruit.name, storage: 1
+  })
+);
+
+var bag = fruits.map(function(fruit) {
+  return {
+    name: fruit.name,
+    storage: 1
+  }
+})
+
+// 구문들로 이뤄져 있고 결과 반환해야 할 시는 return 필요
+var bag = fruits.map(fruit => {
+  console.log('ok')
+  return { name: fruit.name, storage: 1 };
+  });
+
+var bag = fruits.map(function(fruit) {
+  console.log('ok')
+  return {
+    name: fruit.name,
+    storage: 1
+  }
+})
+```
+
+
