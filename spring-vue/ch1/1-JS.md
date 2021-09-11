@@ -342,4 +342,14 @@ var bag = fruits.map(function(fruit) {
 })
 ```
 
+### 매개 변수 기본 값
+```
+const countries = [];
+
+function addCountries(name, cityCount = 1) {
+  countries.push({name : name, cities : cityCount})
+}
+
+addCountries('Singapore'); // cityCount 기본 값 1로 설정됨
+```
 
