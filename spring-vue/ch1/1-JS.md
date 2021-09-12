@@ -353,3 +353,41 @@ function addCountries(name, cityCount = 1) {
 addCountries('Singapore'); // cityCount 기본 값 1로 설정됨
 ```
 
+### 객체 비구조화
+```
+let people = {name: 'Yeony', favorites: ['trip', 'bread']};
+let {name, favorites, friends} = people; 
+
+console.log(name) // Yeony
+console.log(friends) // undefined 
+```
+
+### 배열 비구조화
+```
+let [name, favorites, friends] = ['yeony', 'trip', 'seb', 'apple'];
+console.log(name) // yeony
+
+let [,,friends, fruits] = ['yeony', 'trip', 'seb', 'apple']; // 건너뛰기
+```
+
+### 중첩 비구조화
+* 복잡한 중첩 데이터 중 일부만 추출할 때...   
+~~막상 쓰려면 잘 쓸 수 있을 지 모르겠다~~
+
+```
+let user = {name: 'Yeony', favorites: ['trip', 'bread']};
+let {favorites:[,dessert]} = user;
+
+console.log(dessert) // bread
+```
+* `프로퍼티이름:할당할부분`으로 구성된 것
+* 명시한 부분만 할당되기 때문에 `favorites`를 호출하면 에러
+
+
+### 나머지 요소 할당
+```
+let [one, ...others] = [1, 2, 3, 4];
+console.log(others) //[2, 3, 4]
+```
+* 배열의 요소가 객체일 때 복사된 배열에서 한 객체 프로퍼티를 변경하면 본 배열에서도 변경됨
+* 본질적으로 동일한 객체를 참조하고 있기 때문에 ~~포인터 같은 느낌..?~~
