@@ -56,3 +56,23 @@
 * 비활성화시에는 인스턴스를 소멸시키지 않고 deactivated 라이프사이클 hook이 호출
 
 ~~활용할 수 있을 것 같은 예시~~ [keep-alive예제](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=jhc9639&logNo=221112423557) 20211013 추가
+
+### 지시자 
+`v-for`나 `v-on`등의 지시자처럼 사용자가 정의해서 지시자를 생성할 수 있다.
+* `Vue.directive()`를 이용
+  * 훅 함수를 추가 가능하다
+    * bind: 지시자가 처음 요소에 바인딩 됐을 때 **한 번** 호출
+    * inserted: 바인딩 된 요소가 부모 노드에 삽입됐을 때 호출 (단, 이 때 부모 노드는 DOM에 없을 수도...)
+    * update: 포함하는 컴포넌트의 VNode가 업데이트됐을 때 호출 (단, 자식 컴포넌트의 VNode가 업데이트되기 전에 호출 가능)
+    * componentUpdated: 컴포넌트의 VNode와 자식 컴포넌트의 것도 업데이트된 후에 호출
+    * unbind: 요소에서 지시자의 바인딩이 해제될 때 한 번만 호출
+* 예시
+```
+Vue.directive('focus', {
+    inserted: function(el) {
+        el.focus();
+    }
+})
+
+// https://vuejs.org/v2/guide/custom-directive.html
+```
