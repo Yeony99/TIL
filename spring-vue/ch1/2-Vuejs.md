@@ -57,7 +57,7 @@
 
 ~~활용할 수 있을 것 같은 예시~~ [keep-alive예제](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=jhc9639&logNo=221112423557) 20211013 추가
 
-### 지시자 
+## 지시자 
 `v-for`나 `v-on`등의 지시자처럼 사용자가 정의해서 지시자를 생성할 수 있다.
 * `Vue.directive()`를 이용
   * 훅 함수를 추가 가능하다
@@ -76,3 +76,8 @@ Vue.directive('focus', {
 
 // https://vuejs.org/v2/guide/custom-directive.html
 ```
+
+## 플러그인
+> Vue.js 에서 플러그인 만들기...
+* install() 메소드를 가지는 일반 객체 만든다
+~~플러그인을 만드는 방법은 나중에 보자~~
