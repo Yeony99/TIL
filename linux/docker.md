@@ -19,3 +19,33 @@ Linux 컨테이너를 만들고 사용할 수 있도록 하는 기술이다.
 * 운송(shipping) -- 쉽게 옮길 수 있는 측면
 
 이런 것을 가능케하면서 기존의 어려움을 해결할 수 있는 것이다.   
+
+## docker 설치
+
+### Docker Desktop 다운로드, 설치
+* [Docker Desktop for Mac and Windows](https://www.docker.com/products/docker-desktop) 에서 다운로드
+* Docker Desktop Installer.exe 실행
+* Configuration 체크 후 설치 진행
+* windows 기능 켜기/끄기 -> Hyper-V 체크 후 확인
+
+### 리눅스 커널 업데이트
+윈도우에서 도커 설치하다 WSL2 설치 안됐다는 오류가 발생한다.   
+~~무슨 윈도우에 리눅스인지 모를 말이었다...~~
+알고보니 리눅스 서브시스템, 가상 머신 플랫폼 기능 활성화를 하지 않아서 생긴 문제인 것 같았다.
+
+1. windows powershell 관리자 권한으로 실행
+2. 리눅스 서브 시스템 활성 명령어 입력
+```
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+```
+3. 가상 머신 플랫폼 기능 활성화 명령어 입력
+```
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+```
+4. x64 머신용 최신 WSL2 Linux 커널 업데이트 패키지 다운로드, 설치
+[wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi](wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
+5. Docker Desktop Restart
+
+
+## 참고
+[WSL 2 installation is incomplete, 윈도우10 도커 설치시 리눅스 커널 업데이트, Docker Linux Kernel Update on Windows 10](https://blog.nachal.com/1691)
