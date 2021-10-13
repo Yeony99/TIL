@@ -54,3 +54,5 @@
 * keep-alive를 사용하면 컴포넌트 인스턴스가 전역 큐에 저장
 * 활성화 될 때는 기존 컴포넌트를 사용하여 activated 라이프 사이클 hook이 호출
 * 비활성화시에는 인스턴스를 소멸시키지 않고 deactivated 라이프사이클 hook이 호출
+
+~~활용할 수 있을 것 같은 예시~~ [keep-alive예제](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=jhc9639&logNo=221112423557) 20211013 추가
