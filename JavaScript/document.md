@@ -61,3 +61,23 @@
   * 반복 가능한 객체(배열, Map, Set, 인수 객체 등)을 통해 루프문 만든다
   * for (변수 of 객체) {}
   * **속성 값**을 기준으로 반복 
+* 함수 표현식
+  * `let fn = function() {}` -> `fn()` 실행
+* 실무 함수 사용법
+```
+function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+
+function showOk() {
+  alert( "동의하셨습니다." );
+}
+
+function showCancel() {
+  alert( "취소 버튼을 누르셨습니다." );
+}
+
+// 사용법: 함수 showOk와 showCancel가 ask 함수의 인수로 전달됨
+ask("동의하십니까?", showOk, showCancel);
+```
