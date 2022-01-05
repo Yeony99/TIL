@@ -1,16 +1,11 @@
 <template>
     <div>
         <hr>
-        <!--기존 코드, getters-->
-        <!-- Child counter : {{ num }} <br>  -->
-
-        Child counter : {{ $store.state.counter }} <br />
-        <button>+</button>
-        <button>-</button>
+        Child counter : {{ num }} <br>
     </div>
 </template>
 <script>
 export default {
-    // props: ["num"] // 기존코드
+    props: ["num"]
 }
 </script>

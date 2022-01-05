@@ -1,12 +1,31 @@
 import Vue from 'vue'
 import App from './App'
+import Normal from './Normal'
+import VuexTest from './VuexTest'
+import VueRouter from 'vue-router'
 
-// 2. store.js 등록
+Vue.use(VueRouter)
+
+// store.js 등록
 import {store} from './store'
 
-new Vue({
-  el: '#app',
-  components: { App },
-  store: store, // 3. 사용 등록
-  template: '<App/>'
+const router = new VueRouter({
+  mode: 'history',
+  routes: [
+    {
+      path: '/',
+      component: Normal,
+    },
+    {
+      path: '/vuex',
+      component: VuexTest,
+      name: 'VuexTest'
+    }
+  ]
 })
+
+new Vue({
+  render: h => h(App),
+  router,
+  store: store // store.js 등록
+}).$mount('#app');
